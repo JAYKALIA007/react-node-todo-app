@@ -1,10 +1,10 @@
 import './App.css';
-import Todos from './Todos/Todos'
+import FetchTodos from './Todos/FetchTodos'
 function App() {
   return (
     <div className="App">
       <header className="header">Weclome to my todo app</header>
-        <Todos/>
+        <FetchTodos/>
     </div>
   );
 }

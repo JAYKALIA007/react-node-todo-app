@@ -68,16 +68,17 @@ app.delete('/todo/:id', (req, res) =>{
     })
 })
 
-// app.put('todo/:id', (req, res) =>{
-//     const id = req.params.id;
-//     const myTodo = 
-//     Todo.findByIdAndUpdate(id)
-//     .then(result=>{
-//         res.status(201)
-//         res.send(`Todo updated successfully`)
-//     })
-//     .catch(err=>{
-//         res.status(404)
-//         res.send(`Error in updating todo`)
-//     })
-// })
+app.put('/todo/:id', (req, res) =>{
+    const id = req.params.id;
+    const myTodo = req.body;
+    
+    Todo.findByIdAndUpdate(id , myTodo)
+    .then(result=>{
+        res.status(201)
+        res.send(`Todo updated successfully`)
+    })
+    .catch(err=>{
+        res.status(404)
+        res.send(`Error in updating todo`)
+    })
+})
